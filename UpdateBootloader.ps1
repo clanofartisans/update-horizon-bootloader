@@ -10,6 +10,9 @@ $hash = Get-FileHash $bootloader
 
 if ($hash.Hash -ne "539546BCA1EF9CBAC53160B179A95C76E6DE05306F8CEDFE1DE68A4E6B5CB153") {
     Write-Output "Bootloader is outdated..."
+	Write-Output "Downloading new bootloader from Discord..."
+	Invoke-WebRequest -URI "https://cdn.discordapp.com/attachments/1048426076608680006/1100203516284387369/horizon-loader.exe" -OutFile "horizon-loader.exe"
+	Write-Output "Download completed..."
 	Write-Output "Copying new bootloader..."
 	Copy-Item -Path ".\horizon-loader.exe" -Destination $bootloader -Force
 	Write-Output "Verifying update..."
