@@ -25,3 +25,6 @@ if ($hash.Hash -ne "539546BCA1EF9CBAC53160B179A95C76E6DE05306F8CEDFE1DE68A4E6B5C
 } else {
     Write-Output "Bootloader is already up-to-date!"
 }
+
+Write-Host -NoNewLine 'Press any key to continue...';
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
